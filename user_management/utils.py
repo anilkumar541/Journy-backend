@@ -11,7 +11,7 @@ class Util:
                 from_email=os.environ.get("EMAIL_HOST_USER"),
                 to=[data.get("to_email")],
             )
-            print(email, "das")
+            email.content_subtype= "html"
             email.send()
             print("Email sent successfully!")
         except Exception as e:

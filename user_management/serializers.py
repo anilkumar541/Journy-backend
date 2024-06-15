@@ -69,8 +69,7 @@ class ChangePasswordSerializer(serializers.Serializer):
 
     def create(self, validated_data):
         # Create and return a new instance of YourModel using the validated data
-        confirm_password= validated_data.pop("confirm_password")
-        return CustomUser.objects.create(**validated_data)
+        return validated_data
 
 
 class SendForgotPasswordEmailSerializer(serializers.Serializer):
@@ -86,8 +85,11 @@ class SendForgotPasswordEmailSerializer(serializers.Serializer):
             user_id= user.id
             encoded_user_id= urlsafe_base64_encode(force_bytes(user_id))
             token= PasswordResetTokenGenerator().make_token(user)
-            link= "http://localhost:3000/api/user/forgot_password/"+ encoded_user_id + "/" + token
-            body= "Click link to reset password" + link
+            link= f"http://localhost:5173/user/forgot_password/{encoded_user_id}/{token}"
+            body= f"""
+                <p>Reset your password."</p>
+                <a href="{link}">Click here to reset password</a>
+                """
             data={
                 "subject": "Forgot password",
                 "body": body,
