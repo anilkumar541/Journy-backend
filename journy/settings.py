@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-shkv$2x^dnh@hjuo@g3a&xd2lgve9k1_#dp5-1al9w9bdjtd&)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*", "https://y0m-reliable-geiger.circumeo-apps.net"]
 
 
 # Third pary packages
