@@ -49,9 +49,12 @@ INSTALLED_APPS = [
 
     # internal apps
     "dailyStatus",
-    "user_management"
+    "user_management",
+    "rest_framework",
+    'rest_framework_simplejwt',
+    "corsheaders"
 
-] + third_party_packages
+] #+ third_party_packages
 
 
 MIDDLEWARE = [
