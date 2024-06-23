@@ -6,7 +6,7 @@ from rest_framework_simplejwt.views import ( TokenObtainPairView, TokenRefreshVi
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("dailyStatus.urls")),
+    path("api/", include("dailyStatus.urls")),
     path("api/user/", include("user_management.urls")),
 
     # JWT token path
