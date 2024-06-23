@@ -47,12 +47,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # internal apps
+    # new added apps
     "dailyStatus",
     "user_management",
     "rest_framework",
     'rest_framework_simplejwt',
     "corsheaders"
+
 
 ] #+ third_party_packages
 
@@ -153,13 +154,19 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
-    # "DEFAULT_RENDERER_CLASSES": (
-    #     'rest_framework.renderers.JSONRenderer',
-    # )
+    'DEFAULT_PAGINATION_CLASS': (
+        'rest_framework.pagination.LimitOffsetPagination',
+    ),
+    'PAGE_SIZE': 10
+
 
 
 }
 
+# REST_FRAMEWORK = {
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+#     'PAGE_SIZE': 100
+# }
 
 
 SIMPLE_JWT = {
