@@ -47,12 +47,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # internal apps
+    # new added apps
     "dailyStatus",
     "user_management",
+    "rest_framework",
+    'rest_framework_simplejwt',
+    "corsheaders"
 
 
-] + third_party_packages
+] #+ third_party_packages
 
 
 MIDDLEWARE = [
