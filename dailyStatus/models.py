@@ -22,6 +22,12 @@ class Journy(models.Model):
     created= models.DateTimeField(auto_now_add= True)
     updated= models.DateTimeField(auto_now= True)
 
+    # Optional fields for media files
+    image = models.ImageField(upload_to='journey_images/', blank=True, null=True)
+    video = models.FileField(upload_to='journey_videos/', blank=True, null=True)
+
     class Meta:
         ordering = ['-created']
         db_table = 'journeys'
+
+        

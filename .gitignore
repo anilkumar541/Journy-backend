@@ -1,2 +1,5 @@
 venv
 .env
+
+# Ignore all files containing "cpython"
+*cpython*
